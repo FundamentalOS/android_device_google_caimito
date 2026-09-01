@@ -1,10 +1,14 @@
 [
   {
     "repository": "android_device_google_zumapro",
-    "target_path": "device/google/zumapro"
+    "target_path": "device/google/zumapro",
+    "remote": "fundamentalos",
+    "branch": "16"
   },
   {
     "repository": "android_device_google_caimito-kernels",
-    "target_path": "device/google/caimito-kernels"
+    "target_path": "device/google/caimito-kernels",
+    "remote": "fundamentalos",
+    "branch": "16"
   }
 ]
