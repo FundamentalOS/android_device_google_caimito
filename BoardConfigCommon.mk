@@ -30,3 +30,6 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
 
 # WiFi
 include $(DEVICE_PATH)/wifi/BoardConfig-wifi.mk
+
+# FundamentalOS: allow Google-signed split GCam APKs (Play-updatable) via PRODUCT_COPY_FILES (gcam.mk)
+FUNDAMENTAL_ALLOW_APK_IN_COPY_FILES := true
