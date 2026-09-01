@@ -78,5 +78,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 # FundamentalOS: force IMS (VoLTE/VoWiFi/VoNR) + 5G NR for all carriers
 PRODUCT_PACKAGES += CarrierConfigFundamental
 
+# FundamentalOS: force 5G NSA+SA for all carriers (carrier config nr override)
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/conf/fundamental-carrier.sh:$(TARGET_COPY_OUT_PRODUCT)/etc/fundamental-carrier.sh \
+    $(DEVICE_PATH)/conf/fundamental-carrier.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/fundamental-carrier.rc
+
 # FundamentalOS: Google Camera (GCam) replaces Aperture on caiman (see FUNDAMENTAL_SHIPS_GCAM)
 $(call inherit-product, vendor/google/caimito_gcam/gcam.mk)
