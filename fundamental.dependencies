@@ -10,5 +10,11 @@
     "target_path": "device/google/caimito-kernels",
     "remote": "fundamentalos",
     "branch": "16"
+  },
+  {
+    "repository": "android_vendor_google_caimito_gcam",
+    "target_path": "vendor/google/caimito_gcam",
+    "remote": "fundamentalos",
+    "branch": "16"
   }
 ]
