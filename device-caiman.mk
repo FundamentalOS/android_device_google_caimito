@@ -47,8 +47,6 @@ PRODUCT_PACKAGES += \
     SettingsGoogleOverlayVendorCaiman \
     SystemUIGoogleOverlayVendorCaiman
 
-PRODUCT_PACKAGES += \
-    ApertureOverlayCaiman
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
@@ -82,3 +80,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
 # FundamentalOS: force IMS (VoLTE/VoWiFi/VoNR) + 5G NR for all carriers
 PRODUCT_PACKAGES += CarrierConfigFundamental
+
+# FundamentalOS: Google Camera (GCam) replaces Aperture on caiman (see FUNDAMENTAL_SHIPS_GCAM)
+$(call inherit-product, vendor/google/caimito_gcam/gcam.mk)

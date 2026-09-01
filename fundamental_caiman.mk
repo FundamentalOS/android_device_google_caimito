@@ -5,6 +5,9 @@
 #
 
 # Inherit some common stuff
+# FundamentalOS: ship Google Camera (GCam) instead of Aperture on this device
+FUNDAMENTAL_SHIPS_GCAM := true
+
 $(call inherit-product, vendor/fundamental/config/common_full_phone.mk)
 
 # Inherit device configuration
