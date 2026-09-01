@@ -12,5 +12,10 @@ while [ $i -lt 40 ]; do
     sleep 2; i=$((i+1))
 done
 for slot in 0 1 2; do
+    # 5G NSA+SA
     cmd phone cc set-value -s "$slot" -p carrier_nr_availabilities_int_array 1 2 2>/dev/null
+    # VoLTE / VoWiFi (validated: CMCC comes up on NR_SA + VoLTE with these forced on; no provisioning gate)
+    cmd phone cc set-value -s "$slot" -p carrier_volte_available_bool true 2>/dev/null
+    cmd phone cc set-value -s "$slot" -p carrier_volte_provisioning_required_bool false 2>/dev/null
+    cmd phone cc set-value -s "$slot" -p carrier_wfc_ims_available_bool true 2>/dev/null
 done
