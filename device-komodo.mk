@@ -76,3 +76,6 @@ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
 
 # Window extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+# FundamentalOS: force IMS (VoLTE/VoWiFi/VoNR) + 5G NR for all carriers
+PRODUCT_PACKAGES += CarrierConfigFundamental
