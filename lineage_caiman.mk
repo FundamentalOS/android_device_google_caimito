@@ -5,7 +5,7 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/fundamental/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := caiman

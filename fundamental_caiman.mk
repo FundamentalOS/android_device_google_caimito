@@ -8,23 +8,23 @@
 $(call inherit-product, vendor/fundamental/config/common_full_phone.mk)
 
 # Inherit device configuration
-DEVICE_CODENAME := komodo
+DEVICE_CODENAME := caiman
 DEVICE_PATH := device/google/caimito
-VENDOR_PATH := vendor/google/komodo
+VENDOR_PATH := vendor/google/caiman
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 9 Pro XL
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_MODEL := Pixel 9 Pro
+PRODUCT_NAME := fundamental_$(DEVICE_CODENAME)
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2992
-TARGET_SCREEN_WIDTH := 1344
+TARGET_SCREEN_HEIGHT := 2856
+TARGET_SCREEN_WIDTH := 1280
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="komodo-user 16 BP4A.260205.002 14624737 release-keys" \
-    BuildFingerprint=google/komodo/komodo:16/BP4A.260205.002/14624737:user/release-keys \
+    BuildDesc="caiman-user 16 BP4A.260205.002 14624737 release-keys" \
+    BuildFingerprint=google/caiman/caiman:16/BP4A.260205.002/14624737:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
