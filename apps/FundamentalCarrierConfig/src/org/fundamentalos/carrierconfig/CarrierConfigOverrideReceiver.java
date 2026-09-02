@@ -78,7 +78,9 @@ public class CarrierConfigOverrideReceiver extends BroadcastReceiver {
         overrides.putBoolean(CarrierConfigManager.KEY_CARRIER_WFC_IMS_AVAILABLE_BOOL, true);
 
         try {
-            ccm.overrideConfig(subId, overrides);
+            // persistent=true: stored in the persistent override layer so CarrierConfigLoader
+            // re-applies it before the modem registers on the next boot (engages 5G SA on reboot).
+            ccm.overrideConfig(subId, overrides, true);
             Log.i(TAG, "Applied 5G NSA+SA and VoLTE override for subId " + subId);
         } catch (Exception e) {
             Log.e(TAG, "overrideConfig failed for subId " + subId, e);
