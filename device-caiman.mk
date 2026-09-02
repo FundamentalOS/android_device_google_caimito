@@ -82,4 +82,4 @@ PRODUCT_PACKAGES += CarrierConfigFundamental
 PRODUCT_PACKAGES += FundamentalCarrierConfig
 
 # FundamentalOS: Google Camera (GCam) replaces Aperture on caiman (see FUNDAMENTAL_SHIPS_GCAM)
-$(call inherit-product, vendor/google/caimito_gcam/gcam.mk)
+$(call inherit-product, vendor/google/caimito/gcam/gcam.mk)
