@@ -19,3 +19,18 @@ for slot in 0 1 2; do
     cmd phone cc set-value -s "$slot" -p carrier_volte_provisioning_required_bool false 2>/dev/null
     cmd phone cc set-value -s "$slot" -p carrier_wfc_ims_available_bool true 2>/dev/null
 done
+
+# First boot after a factory reset: the persistent -p overrides above did not exist
+# when the modem first registered, so it is already camped on LTE and will not
+# re-evaluate NR until the radio re-registers. On every later NORMAL boot the
+# persisted override IS applied before registration, so 5G SA comes up on its own;
+# only this very first post-wipe boot misses it. Force one modem restart so SA
+# engages now instead of requiring the user to reboot once. Guarded by a marker in
+# /data (wiped by factory reset, kept across reboots) so normal boots never take
+# this radio blip.
+MARKER=/data/local/tmp/.fundamental_carrier_firstboot
+if [ ! -e "$MARKER" ]; then
+    sleep 3
+    cmd phone restart-modem 2>/dev/null
+    : > "$MARKER" 2>/dev/null
+fi
