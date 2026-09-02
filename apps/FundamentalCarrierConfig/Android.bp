@@ -1,0 +1,27 @@
+// FundamentalOS: force 5G NSA+SA + VoLTE on top of the carrier apps config using the
+// official CarrierConfigManager#overrideConfig API (replaces the old boot shell service).
+// Installed to system_ext (device-owned) to avoid the /system artifact-path requirement.
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app {
+    name: "FundamentalCarrierConfig",
+    srcs: ["src/**/*.java"],
+    sdk_version: "system_current",
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+    optimize: {
+        enabled: false,
+    },
+    required: ["privapp_whitelist_org.fundamentalos.carrierconfig"],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_org.fundamentalos.carrierconfig",
+    src: "privapp_permissions_org.fundamentalos.carrierconfig.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+    filename_from_src: true,
+}
