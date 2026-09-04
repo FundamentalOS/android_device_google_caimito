@@ -13,7 +13,7 @@ FUNDAMENTAL_SHIPS_GCAM := true
 # and it is a persistent privileged process. Gated by common_mobile_full.mk.
 TARGET_EXCLUDES_AUDIOFX := true
 
-$(call inherit-product, vendor/fundamental/config/common_full_phone.mk)
+$(call inherit-product, vendor/fundamental/common/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := caiman
