@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel Screenshots: install for every user type, as on stock Pixel builds. -->
+<config>
+    <install-in-user-type package="com.google.android.apps.pixel.agent">
+        <install-in user-type="SYSTEM" />
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+</config>
