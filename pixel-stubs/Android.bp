@@ -1,0 +1,61 @@
+// Pixel app stubs that the Play Store upgrades to the full apps on Pixel devices.
+// Both are stock BP4A prebuilts; without the stub Play reports the app as incompatible.
+
+// Pixel Screenshots ("Pearl"): source of the screenshot shelf suggestions
+// (see SystemUIFundamental's PearlActionClient). Needs the pearl privapp allowlist.
+android_app_import {
+    name: "PixelAIPrebuilt",
+    owner: "google",
+    apk: "PixelAIPrebuilt.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+    required: [
+        "privapp-permissions-google-pearl.xml",
+        "preinstalled-packages-com.google.android.apps.pixel.agent.xml",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-google-pearl.xml",
+    src: "privapp-permissions-google-pearl.xml",
+    sub_dir: "permissions",
+    product_specific: true,
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "preinstalled-packages-com.google.android.apps.pixel.agent.xml",
+    src: "preinstalled-packages-com.google.android.apps.pixel.agent.xml",
+    sub_dir: "sysconfig",
+    product_specific: true,
+    filename_from_src: true,
+}
+
+// Standalone Now Playing app stub (ASI hands its history/settings UI to it once Play upgrades it).
+android_app_import {
+    name: "NowPlayingPrebuilt",
+    owner: "google",
+    apk: "NowPlayingPrebuilt.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+    required: [
+        "sysconfig-nowplaying.xml",
+    ],
+}
+
+prebuilt_etc {
+    name: "sysconfig-nowplaying.xml",
+    src: "nowplaying.xml",
+    sub_dir: "sysconfig",
+    product_specific: true,
+    filename_from_src: true,
+}
