@@ -5,6 +5,9 @@
 #
 
 # Inherit some common stuff
+# Chrome, Photos and YouTube Music come from GApps; leave the AOSP stand-ins out.
+TARGET_EXCLUDES_AOSP_MEDIA_APPS := true
+
 $(call inherit-product, vendor/fundamental/common/config/common_full_phone.mk)
 
 # Inherit device configuration

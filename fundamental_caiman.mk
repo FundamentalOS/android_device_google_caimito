@@ -12,6 +12,8 @@ FUNDAMENTAL_SHIPS_GCAM := true
 # proxy on this Tensor audio config, so it is bypassed on compressed-offload playback),
 # and it is a persistent privileged process. Gated by common_mobile_full.mk.
 TARGET_EXCLUDES_AUDIOFX := true
+# Chrome, Photos and YouTube Music come from GApps; leave the AOSP stand-ins out.
+TARGET_EXCLUDES_AOSP_MEDIA_APPS := true
 
 $(call inherit-product, vendor/fundamental/common/config/common_full_phone.mk)
 
