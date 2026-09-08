@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
 
 
 # PowerShare
-include hardware/google/pixel/powershare/device.mk
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
