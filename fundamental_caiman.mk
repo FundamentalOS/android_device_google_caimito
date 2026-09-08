@@ -39,5 +39,4 @@ $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
 
 # Pixel app stubs upgraded by the Play Store (Pixel Screenshots for the screenshot shelf, Now Playing)
 PRODUCT_PACKAGES += \
-    PixelAIPrebuilt \
-    NowPlayingPrebuilt
+    PixelAIPrebuilt
