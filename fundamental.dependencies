@@ -3,18 +3,24 @@
     "repository": "android_device_google_zumapro",
     "target_path": "device/google/zumapro",
     "remote": "fundamentalos",
-    "branch": "16"
+    "branch": "17"
   },
   {
     "repository": "android_device_google_caimito-kernels",
     "target_path": "device/google/caimito-kernels",
     "remote": "fundamentalos",
-    "branch": "16"
+    "branch": "17"
   },
   {
     "repository": "android_vendor_google_caimito_gcam",
     "target_path": "vendor/google/caimito/gcam",
     "remote": "fundamentalos",
-    "branch": "16"
+    "branch": "17"
+  },
+  {
+    "repository": "android_vendor_google_caiman",
+    "target_path": "vendor/google/caiman",
+    "remote": "fundamentalos",
+    "branch": "17"
   }
 ]
