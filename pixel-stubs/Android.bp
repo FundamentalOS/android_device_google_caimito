@@ -36,11 +36,3 @@ prebuilt_etc {
     filename_from_src: true,
 }
 
-
-prebuilt_etc {
-    name: "sysconfig-nowplaying.xml",
-    src: "nowplaying.xml",
-    sub_dir: "sysconfig",
-    product_specific: true,
-    filename_from_src: true,
-}
